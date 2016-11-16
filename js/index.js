@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
 
-var connectionString = require('../dbConnection.js');
+var connectionString = "postgres://postgres:easyforme@localhost/sandbox";
 
 var app = module.exports = express();
 app.use(bodyParser.json());
