@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<!-- heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs#v83 -a my-app -->
-<html>
+<html ng-app="mainApp">
   <head>
     <meta charset="utf-8">
     <title>Car Safe Kids</title>
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
+
+  {{test}}
+
     <h1>Car Safe Kids</h1>
+
+    <nav class="nav">
+      <a ui-sref="home">Home</a>
+      <a ui-sref="products">Products</a>
+      <a ui-sref="account">Account</a>
+      <a ui-sref="cart">Cart</a>
+    </nav>
+
+    <ui-view></ui-view>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
+		<script src="./controllers/app.js"></script>
+		<script src="./controllers/mainCtrl.js"></script>
+		<script src="./controllers/mainService.js"></script>
+
   </body>
 </html>
