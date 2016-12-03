@@ -1,1 +1,10 @@
-<h1>Cart</h1>
+  <h1>Cart</h1>
+<p ng-repeat="prod in cartItems">
+  <span>{{prod[0]}}</span>
+  <img src="{{prod[0]}}" />
+  ${{prod[2]}}
+  <button class="removeBtn" ng-click="removeCart(prod, prod[2])">Remove</button>
+
+</p>
+<span>Total: ${{prodTotal}} </span>
+<button class="removeBtn" ng-click="cartClear()">Clear Cart</button>

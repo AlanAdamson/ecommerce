@@ -1,6 +1,7 @@
 
-<p ng-repeat="product in products"> {{product.name}} </p>
+<p ng-repeat="product in products"> {{product.name}} <img src="{{product.imageurl}}" /> ${{product.price}} <button class="addBtn" ng-click='addCart([product.name, product.imageurl, product.price], product.price)'>add to cart</button>
+<button class="removeBtn" ng-click="removeCart(prod, product.price)">remove</button></p>
+<h5>Products in Cart</h5><p ng-repeat="prod in cartItems">{{prod[0]}}</p>
 
-<button ui-sref="booked({id: {{item.id}}})">add to cart</button>
-
-<p> {{products}} </p>
+<!-- <span>Total items in cart: {{cartCount}}</span> -->
+<button ui-sref="cart" >Go to Cart</button>

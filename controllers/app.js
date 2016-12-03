@@ -10,6 +10,7 @@ angular.module('mainApp', ['ui.router'])
   })
 
   .state('products', {
+    abstract: true,
     url: '/products',
     templateUrl: './views/products.html'
   })
@@ -20,15 +21,14 @@ angular.module('mainApp', ['ui.router'])
   })
 
   .state('cart', {
-    url: '/cart/:id',
-    templateUrl: './views/cart.html',
-    controller: 'cartCtrl',
-    controllerAs: 'vm'
+    url: '/cart',
+    templateUrl: './views/cart.html'
   })
 
-  .state('products.all', {
-    url: '/products/all',
-    templateUrl: './views/products/allProducts.html'
+  .state('productsAll', {
+    url: '/',
+    templateUrl: './views/products/allProducts.html',
+    parent: 'products'
   })
 
   .state('products.description', {

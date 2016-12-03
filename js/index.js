@@ -21,9 +21,10 @@ app.get('/products-load',
     controllers.getAll
   );
 
-  app.get('/products-load',
-      controllers.getAll
-    );
+app.get('/cart-load',
+    controllers.getCart
+  );
+
 
 var port = 7878;
 app.listen(port, function(){
