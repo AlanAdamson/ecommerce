@@ -2,8 +2,6 @@ angular.module('mainApp').controller('mainCtrl', function($scope, mainService){
   $scope.test = "working";
   $scope.cartCount = 0;
 
-
-
   $scope.getProducts = function() {
     mainService.getProducts()
     .then(function(dataFromService) {
@@ -19,7 +17,7 @@ angular.module('mainApp').controller('mainCtrl', function($scope, mainService){
     $scope.cartItems = mainService.cartItems;
     $scope.cartCount = mainService.cartCounter;
     $scope.cartTotal = mainService.prodPriceTotal;
-
+    $scope.cartStorage = mainService.cartStorage;
   };
 
   // $scope.cartTotaler = function(prodPrice) {
@@ -36,6 +34,7 @@ angular.module('mainApp').controller('mainCtrl', function($scope, mainService){
   var prodTotalPrice = 0;
   $scope.prodTotal = prodTotalPrice;
   $scope.cartTotaler = function(prodPrice) {
+    console.log(prodTotalPrice);
     prodTotalPrice = prodTotalPrice + prodPrice;
     $scope.prodTotal = prodTotalPrice;
   };
@@ -50,6 +49,9 @@ angular.module('mainApp').controller('mainCtrl', function($scope, mainService){
 
   $scope.cartClear = function() {
     mainService.cartClear();
+    $scope.cartItems = mainService.cartItems;
+    prodTotalPrice = 0;
+    $scope.prodTotal = prodTotalPrice;
   };
 
   });
