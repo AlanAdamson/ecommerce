@@ -6,7 +6,10 @@ angular.module('mainApp', ['ui.router'])
 
   .state('home', {
     url: '/',
-    templateUrl: './views/home.html'
+    templateUrl: './views/home.html',
+    data: {
+      css: '../css/style.css'
+    }
   })
 
   .state('products', {
@@ -22,7 +25,10 @@ angular.module('mainApp', ['ui.router'])
 
   .state('cart', {
     url: '/cart',
-    templateUrl: './views/cart.html'
+    templateUrl: './views/cart.html',
+    data: {
+      css: '../css/style.css'
+    }
   })
 
   .state('productsAll', {

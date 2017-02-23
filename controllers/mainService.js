@@ -3,7 +3,7 @@ angular.module('mainApp').service('mainService',  function($http) {
   this.cartCounter = 0;
   this.prodPriceTotal = 0;
   this.cartItems = [];
-  this.cartStorage = localStorage.getItem('cartItems');
+  this.cartStorage = JSON.parse(localStorage.getItem('cartItems'));
 
   this.getProducts = function() {
     return $http({
@@ -14,8 +14,16 @@ angular.module('mainApp').service('mainService',  function($http) {
 
   this.addCart = function(prod) {
     this.cartItems.push(prod);
-    localStorage.setItem('cartItems', this.cartItems);
-    console.log(localStorage.getItem('cartItems'));
+    // var oldCart = JSON.parse(localStorage.getItem('cartItems'));
+    // // var oldCart = "";
+    // console.log('oldcart: ' + oldCart);
+    // if(!oldCart) {
+    //   oldCart = "";
+    // }
+    // console.log('oldcart: ' + oldCart);
+    // localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+    // // localStorage.setItem('cartItems', JSON.stringify(oldCart + this.cartItems));
+    // console.log('localstorage: ' + localStorage.getItem('cartItems'));
   };
 
   // this.addCart = function(prod) {
@@ -33,7 +41,20 @@ angular.module('mainApp').service('mainService',  function($http) {
     this.cartItems.splice(prodLocal, 1);
   };
 
+
+
+  this.cartCounter = 0;
+
+  var prodPriceTotal = 0;
+
+  this.cartTotaler = function(prodPrice) {
+    console.log('Main service prodPrice ' + prodPrice);
+   prodPriceTotal = prodPriceTotal + prodPrice;
+    console.log('main service prodpricetotal ' + prodPriceTotal);
+  };
+
   this.cartClear = function() {
+    localStorage.clear();
     if(this.cartItems.length !== 0) {
       this.cartItems = [];
       this.prodPriceTotal = 0;

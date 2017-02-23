@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
+var connect = require('connect');
 
 var connectionString = "postgres://postgres:easyforme@localhost/sandbox";
 
@@ -25,6 +26,14 @@ app.get('/cart-load',
     controllers.getCart
   );
 
+  // var connect = require("connect");
+
+  // var app = connect().use(connect.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/'));
+//
+// app.all('/*', function(req, res) {
+//     res.sendfile('index.html');
+// });
 
 var port = 7878;
 app.listen(port, function(){

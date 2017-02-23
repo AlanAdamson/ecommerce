@@ -1,10 +1,10 @@
 {
   "name": "ecommerce",
   "version": "1.0.0",
-  "description": "<img src=\"https://devmounta.in/img/logowhiteblue.png\" width=\"250\" align=\"right\">",
-  "main": "./js/index.js",
+  "description": "blbh blah blah",
+  "main": "./js/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "dependencies": {
     "angular-local-storage": "^0.5.0",
     "body-parser": "^1.15.2",
+    "connect": "^3.5.0",
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "massive": "^2.5.0",

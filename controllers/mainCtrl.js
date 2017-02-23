@@ -1,6 +1,7 @@
 angular.module('mainApp').controller('mainCtrl', function($scope, mainService){
   $scope.test = "working";
   $scope.cartCount = 0;
+  $scope.cartStorage = mainService.cartStorage;
 
   $scope.getProducts = function() {
     mainService.getProducts()
@@ -17,7 +18,11 @@ angular.module('mainApp').controller('mainCtrl', function($scope, mainService){
     $scope.cartItems = mainService.cartItems;
     $scope.cartCount = mainService.cartCounter;
     $scope.cartTotal = mainService.prodPriceTotal;
-    $scope.cartStorage = mainService.cartStorage;
+  };
+
+  $scope.update = function() {
+    console.log('returned');
+    return 0;
   };
 
   // $scope.cartTotaler = function(prodPrice) {

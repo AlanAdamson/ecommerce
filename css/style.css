@@ -1,6 +1,67 @@
+head, body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  width: vw(100-120px);
+  padding: 10px 100px 10px 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #ccc;
+}
+
+.logo {
+  font-family: sans-serif;
+  color: red;
+  padding: 0 200px 0 0;
+}
+
+.pageTitle {
+  font-family: sans-serif;
+}
+
+.nav {
+  padding: 0 0 0 200px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: gray;
+  padding: 5px;
+}
+
+.nav a:hover {
+  color: red;
+}
+
+ui-view {
+  padding: 25px 50px;
+  width: vw(100-5px);
+}
+
 .addBtn {
   display: none;
 }
 .removeBtn {
   display: block;
+}
+.prodName {
+  font-family: sans-serif;
+}
+
+.prodImg {
+
+}
+
+.price {
+
 }

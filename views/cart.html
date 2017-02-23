@@ -1,15 +1,16 @@
-  <h1>Cart</h1>
-<p ng-repeat="prod in cartItems">
-  <span>{{prod[0]}}</span>
-  <img src="{{prod[0]}}" />
-  ${{prod[2]}}
-  <button class="removeBtn" ng-click="removeCart(prod, prod[2])">Remove</button>
+<h2 class="pageTitle">Cart</h2>
+Cart Items: {{cartItems}}
+<p></p>
+Cart Storage: {{cartStorage}}
+<p></p>
+<p ng-repeat="prod in cartStorage">
+
+<span class="prodName">{{prod[0]}}</span>
+<img class="prodImg" src="{{prod[0]}}" />
+<span class="price">${{prod[2]}}</span>
+<button class="removeBtn" ng-click="removeCart(prod, prod[2])">Remove</button>
 </p>
 
 <span>Total: ${{prodTotal}} </span>
 
 <button class="removeBtn" ng-click="cartClear()">Clear Cart</button>
-
-  {{cartStorage}}
-  <span>test</span>
-</p>

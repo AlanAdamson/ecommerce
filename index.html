@@ -2,30 +2,36 @@
 <html ng-app="mainApp">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <title>Car Safe Kids</title>
   </head>
   <body ng-controller="mainCtrl">
 
-    <h1>Car Safe Kids</h1>
+    <main>
+      <header>
+        <h1 class="logo">Car Safe Kids</h1>
 
-    <nav class="nav">
-      <a ui-sref="home">Home</a>
-      <a ui-sref="productsAll">Products</a>
-      <a ui-sref="account">Account</a>
-      <a ui-sref="cart">Cart</a>
-    </nav>
+        <nav class="nav">
+          <a ui-sref="home">Home</a>
+          <a ui-sref="productsAll">Products</a>
+          <a ui-sref="account">Account</a>
+          <a ui-sref="cart" ng-click="update()">Cart</a>
+        </nav>
+      </header>
+      {{test}}
+      <ui-view></ui-view>
 
-    <ui-view></ui-view>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
+      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>
+  		<script src="./controllers/app.js"></script>
+  		<script src="./controllers/mainCtrl.js"></script>
+  		<script src="./controllers/cartCtrl.js"></script>
+  		<script src="./controllers/mainService.js"></script>
+  		<script src="./controllers/productsCtrl.js"></script>
+      <script src="./js/jQuery.js"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.min.js"></script>
-		<script src="./controllers/app.js"></script>
-		<script src="./controllers/mainCtrl.js"></script>
-		<script src="./controllers/mainService.js"></script>
-    <script src="./js/jQuery.js"></script>
-
-
+    </main>
   </body>
 </html>
