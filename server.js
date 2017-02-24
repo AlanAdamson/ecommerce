@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+
+console.log('It's alive!');
+
 var massive = require('massive');
 var connect = require('connect');
 
