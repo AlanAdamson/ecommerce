@@ -2,9 +2,9 @@
   "name": "ecommerce",
   "version": "1.0.0",
   "description": "blbh blah blah",
-  "main": "./js/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node ../js/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
